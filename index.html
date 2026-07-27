@@ -1,188 +1,110 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한 가지 물어볼 게 있어... ❤️</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #ffe6e9;
-            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
-        }
-        h1 {
-            color: #e63946;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .btn-group {
-            margin-top: 30px;
-            position: relative;
-            height: 60px;
-        }
-        button {
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-weight: bold;
-        }
-        #yesBtn {
-            background-color: #ff4d6d;
-            color: white;
-            margin-right: 15px;
-        }
-        #yesBtn:hover {
-            transform: scale(1.1);
-            background-color: #c9184a;
-        }
-        #noBtn {
-            background-color: #adb5bd;
-            color: white;
-            position: absolute;
-        }
-        .gift-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .gift-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 15px;
-            gap: 8px;
-        }
-        .gift-btn {
-            background-color: #ffb703;
-            color: white;
-            border-radius: 15px;
-            padding: 10px 12px;
-            flex: 1;
-            font-size: 0.95rem;
-        }
-        .gift-btn:hover {
-            background-color: #fb8500;
-        }
-        .letter-btn {
-            background-color: #ff4d6d;
-            color: white;
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 12px;
-            border-radius: 15px;
-            font-size: 1rem;
-        }
-        .letter-btn:hover {
-            background-color: #c9184a;
-        }
-        .letter-box {
-            display: none;
-            background-color: #fff0f3;
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px dashed #ffb3c1;
-            text-align: left;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #444;
-            margin-bottom: 15px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .music-player {
-            margin-top: 15px;
-            display: none;
-        }
-        iframe {
-            width: 100%;
-            height: 215px;
-            border-radius: 12px;
-            border: none;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <title>For Kim Noa 💖</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1 id="question">나랑 사귈래? 🌹</h1>
-        
-        <div class="btn-group" id="initialButtons">
-            <button id="yesBtn" onclick="acceptProposal()">네! ❤️</button>
-            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">아니오 😜</button>
-        </div>
 
-        <div class="gift-container" id="giftSection">
-            <p style="font-size: 1.1rem; color: #555; margin-bottom: 15px;">좋은 선택이야! 🎉 너를 위해 특별한 선물들을 준비했어 🎁</p>
-            
-            <button class="letter-btn" onclick="toggleLetter()">💌 내 진심이 담긴 편지 읽기</button>
-            
-            <div class="letter-box" id="letterBox">
-                너를 볼 때마다 내 심장은 항상 두근거려... 💓 다른 사람한테 빼앗길까 봐 질투도 엄청 많이 나! 하지만 혹시나 너를 무섭게 하거나 상처 줄까 봐 늘 조심스럽고 걱정되기도 해 🥺<br><br>
-                무슨 말이 하고 싶냐면... 나 너 진짜 진짜 많이 사랑해! 부족한 나를 이렇게나 많이 사랑해 줘서 너무 고마워. 우리 앞으로도 아주 오랜 시간을 함께 보내야 하니까, 서로 더 노력하고 예쁘게 사랑하자 내 사랑! 😘<br><br>
-                많이 많이 쪽쪽쪽~💋💋💋
-            </div>
+<div class="container">
 
-            <p style="font-size: 0.95rem; color: #777;">🎵 음악 선물도 골라봐!</p>
-            <div class="gift-buttons">
-                <button class="gift-btn" onclick="playSong('CuT0bF03mGg')">선물 1 🎁</button>
-                <button class="gift-btn" onclick="playSong('HZX7MB_m13M')">선물 2 🎁</button>
-                <button class="gift-btn" onclick="playSong('-qItgWRKFXA')">선물 3 🎁</button>
-            </div>
+    <h1>💖 For Kim Noa 💖</h1>
 
-            <div class="music-player" id="playerContainer">
-                <iframe id="youtubePlayer" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+    <p class="subtitle">
+        A Special Gift From Erdene-Ochir
+    </p>
 
-    <script>
-        function moveButton() {
-            const noBtn = document.getElementById('noBtn');
-            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
-            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
-            noBtn.style.left = x + 'px';
-            noBtn.style.top = y + 'px';
-        }
+    <button id="giftBtn">
+        🎁 Open My Gift
+    </button>
 
-        function acceptProposal() {
-            document.getElementById('question').innerText = "내 마음을 받아줘서 고마워 ❤️";
-            document.getElementById('initialButtons').style.display = 'none';
-            document.getElementById('giftSection').style.display = 'block';
-        }
+</div>
 
-        function toggleLetter() {
-            const letterBox = document.getElementById('letterBox');
-            if (letterBox.style.display === 'block') {
-                letterBox.style.display = 'none';
-            } else {
-                letterBox.style.display = 'block';
-            }
-        }
+<div id="giftPage" style="display:none;">
 
-        function playSong(videoId) {
-            const playerContainer = document.getElementById('playerContainer');
-            const iframe = document.getElementById('youtubePlayer');
-            iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-            playerContainer.style.display = 'block';
-        }
-    </script>
+    <h2>Hello Noa 🌸</h2>
+
+    <p>
+        I made this little gift just for you.
+    </p>
+
+    <p class="letter">
+        노아야,<br><br>
+
+        넌 내 인생에서 가장 아름다운 선물이야.<br><br>
+
+        앞으로도 우리 오래오래 함께하고,<br>
+        언젠가는 결혼했으면 좋겠어.<br><br>
+
+        사랑해,<br>
+        내 자기 🤍
+    </p>
+
+    <button id="questionBtn">
+        Continue 💗
+    </button>
+
+</div>
+
+<div id="questionPage" style="display:none;">
+
+<h2>Would you like to be my girlfriend? 🌸</h2>
+
+<button id="yesBtn">
+💖 Yes
+</button>
+
+<button id="noBtn">
+🤍 No
+</button>
+
+</div>
+
+<div id="musicPage" style="display:none;">
+
+<h2>Choose Your Song 🎵</h2>
+
+<a href="https://youtu.be/HZX7MB_m13M" target="_blank">
+<button>Cause I'm Falling Slowly Love With You</button>
+</a>
+
+<a href="https://youtu.be/-qItgWRKFXA" target="_blank">
+<button>Yung Kai - Wildflower</button>
+</a>
+
+<a href="https://youtu.be/NwFVSclD_uc" target="_blank">
+<button>Demxntia - Keep Smiling</button>
+</a>
+
+<button>The Walters - I Love You So</button>
+
+<h3>📸 Memories</h3>
+
+<img src="photo1.jpg" class="photo">
+<img src="photo2.jpg" class="photo">
+<img src="photo3.jpg" class="photo">
+<img src="photo4.jpg" class="photo">
+<img src="photo5.jpg" class="photo">
+
+<p class="ending">
+
+Thank you for opening my heart.
+
+No matter what happens...
+
+You'll always be someone special to me.
+
+🤍 Erdene-Ochir
+
+</p>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
