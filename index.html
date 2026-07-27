@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нэг асуулт байна... ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e63946;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            margin-top: 30px;
+            position: relative;
+            height: 60px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #yesBtn {
+            background-color: #ff4d6d;
+            color: white;
+            margin-right: 15px;
+        }
+        #yesBtn:hover {
+            transform: scale(1.1);
+            background-color: #c9184a;
+        }
+        #noBtn {
+            background-color: #adb5bd;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="question">Чи надтай үерхэх үү? 🌹</h1>
+        <div class="btn-group">
+            <button id="yesBtn" onclick="acceptProposal()">Тийм! ❤️</button>
+            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">Үгүй 😜</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function acceptProposal() {
+            document.getElementById('question').innerText = "Яаая, зөв сонголт хийлээ! 🎉 Сэтгэлийг чинь хэзээ ч алдахгүй ээ ❤️";
+            document.querySelector('.btn-group').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
